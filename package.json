@@ -1,0 +1,40 @@
+{
+  "name": "sobot",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "add": "^2.0.6",
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "materialize-css": "^1.0.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-image-gallery": "^0.8.12",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "2.1.1",
+    "react-slick": "^0.23.2",
+    "react-thunk": "^1.0.0",
+    "redux": "^4.0.1",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
+    "yarn": "^1.12.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
