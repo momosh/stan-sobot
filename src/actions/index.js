@@ -10,26 +10,25 @@ import {
 } from "./types";
 
 const api = axios.create({
-  baseURL: "https://cors-anywhere.herokuapp.com/http://sobot.software/api",
   headers: {
     "Content-Type": "application/json"
   }
 });
 
 export const fetchHotels = (pageSize = 10) => async dispatch => {
-  const { data } = await api.get("hotels");
+  const { data } = await api.get("/api/hotels");
 
   dispatch({ type: FETCH_HOTELS, payload: { data, pageSize } });
 };
 
 export const fetchHotelImages = id => async dispatch => {
-  const { data } = await api.get(`hotels/images/${id}`);
+  const { data } = await api.get(`/api/hotels/images/${id}`);
 
   dispatch({ type: FETCH_HOTEL_IMAGES, payload: data });
 };
 
 export const fetchHotelComments = id => async dispatch => {
-  const { data } = await api.get(`hotels/comments/${id}`);
+  const { data } = await api.get(`/api/hotels/comments/${id}`);
 
   dispatch({ type: FETCH_HOTEL_COMMENTS, payload: data });
 };
@@ -52,13 +51,9 @@ export const sendHotelComment = (id, fullName, comment) => async dispatch => {
   fData.set("fullName", fullName);
   fData.set("comment", comment);
 
-  const { data } = await axios.post(
-    `https://cors-anywhere.herokuapp.com/http://sobot.software/api/hotels/comment/${id}`,
-    fData,
-    {
-      headers: { "Content-Type": "multipart/form-data" }
-    }
-  );
+  const { data } = await axios.post(`/api/hotels/comment/${id}`, fData, {
+    headers: { "Content-Type": "multipart/form-data" }
+  });
 
   dispatch({ type: SEND_HOTEL_COMMENT, payload: data });
 };

@@ -5,6 +5,7 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Hotels from "./HotelsList";
 import HotelDetails from "./HotelDetails";
+import requireSelectedHotel from "./hoc/requireSelectedHotel";
 
 const App = () => (
   <Router>
@@ -13,7 +14,10 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route exact path="/hotels" component={Hotels} />
-        <Route path="/hotels/details" component={HotelDetails} />
+        <Route
+          path="/hotels/details"
+          component={requireSelectedHotel(HotelDetails)}
+        />
       </Switch>
     </div>
   </Router>
